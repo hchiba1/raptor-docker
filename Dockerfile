@@ -1,7 +1,6 @@
-FROM ubuntu:20.04
+FROM alpine:3.13.2
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends raptor2-utils \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add raptor2
 
 RUN mkdir /work
 WORKDIR /work
